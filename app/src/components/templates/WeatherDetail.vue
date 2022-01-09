@@ -2,12 +2,19 @@
 import WeatherWeek from "../organisms/WeatherWeek.vue";
 import WeatherHighlights from "../organisms/WeatherHilights.vue";
 import WeatherSwitchTemp from "../molecules/WeatherSwitchTemp.vue";
+import {Location} from "../../types/types";
+
+interface Props {
+  location: Location
+}
+
+const { location } = defineProps<Props>()
 </script>
 
 <template>
   <div class="detail">
     <WeatherSwitchTemp />
-    <WeatherWeek />
+    <WeatherWeek :location="location" />
     <WeatherHighlights />
   </div>
 </template>

@@ -22,8 +22,8 @@ onMounted(async () => {
 <template>
   <div class="weather-app">
     <p v-if="state.loading">Loading...</p>
-    <WeatherNavbar v-if="!state.loading"  :location="state.weather" />
-    <WeatherDetail />
+    <WeatherNavbar v-if="!state.loading" :location="state.weather" />
+    <WeatherDetail v-if="!state.loading" :location="state.weather" />
   </div>
 </template>
 

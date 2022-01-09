@@ -32,7 +32,7 @@ const orderedDate = computed(() => {
 <template>
   <WeatherSearch />
   <div class="today">
-    <WeatherImage :abbreviation="weather_state_abbr" />
+    <WeatherImage :abbreviation="weather_state_abbr" :today="true" />
     <WeatherTemp :temp="orderedTemp" />
     <WeatherState :state="weather_state_name" />
     <WeatherDate :date="orderedDate" />
