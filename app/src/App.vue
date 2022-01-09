@@ -9,6 +9,6 @@ import WeatherApp from "./components/pages/WeatherApp.vue";
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: #E7E7EB;
 }
 </style>
