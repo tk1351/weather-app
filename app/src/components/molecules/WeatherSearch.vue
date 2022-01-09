@@ -5,8 +5,15 @@ import WeatherIconButton from "../atoms/WeatherIconButton.vue";
 
 <template>
   <div class="search-wrapper">
-    <WeatherButton :value="'Search for places'" :type="'button'" />
-    <WeatherIconButton :value="'my_location'" :material="true" />
+    <WeatherButton
+      :value="'Search for places'"
+      :type="'button'"
+    />
+    <WeatherIconButton
+      :value="'my_location'"
+      :material="true"
+      :checked="false"
+    />
   </div>
 </template>
 

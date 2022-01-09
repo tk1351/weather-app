@@ -17,5 +17,6 @@ import WeatherSwitchTemp from "../molecules/WeatherSwitchTemp.vue";
   min-height: 100%;
   width: 75%;
   background-color: #100E1D;
+  padding: 20px 170px;
 }
 </style>

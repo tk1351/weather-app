@@ -5,18 +5,21 @@ interface Props {
 }
 
 const { material, value } = defineProps<Props>()
+
 </script>
 
 <template>
-  <button class="my-location">
-    <span :class="{'material-icons-outlined': material}">
+  <button class="button">
+    <span
+      :class="{'material-icons-outlined': material }"
+    >
       {{ value }}
     </span>
   </button>
 </template>
 
 <style scoped>
-.my-location {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
