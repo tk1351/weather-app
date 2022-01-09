@@ -25,7 +25,7 @@ const {
 
 const orderedTemp = computed(() => Math.ceil(the_temp))
 const orderedDate = computed(() => {
-  return createOrderedDate(applicable_date)
+  return createOrderedDate(applicable_date, 'today')
 })
 </script>
 
@@ -33,9 +33,9 @@ const orderedDate = computed(() => {
   <WeatherSearch />
   <div class="today">
     <WeatherImage :abbreviation="weather_state_abbr" :today="true" />
-    <WeatherTemp :temp="orderedTemp" />
+    <WeatherTemp :temp="orderedTemp" :today="true" />
     <WeatherState :state="weather_state_name" />
-    <WeatherDate :date="orderedDate" />
+    <WeatherDate :date="`today ・ ${orderedDate}`" />
     <WeatherMyLocation :location="location.title" />
   </div>
 </template>

@@ -1,17 +1,18 @@
 <script lang="ts" setup>
 interface Props {
   date: string
+  today?: boolean
 }
 
-const { date } = defineProps<Props>()
+const { date, today } = defineProps<Props>()
 </script>
 
 <template>
-  <p class="date">today ・ {{ date }}</p>
+  <p :class="{'date--today': today}">{{ date }}</p>
 </template>
 
 <style scoped>
-.date {
+.date--today {
   color: #88869D;
   margin-bottom: 20px;
 }

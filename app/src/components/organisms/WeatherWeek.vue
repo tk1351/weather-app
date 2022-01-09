@@ -16,12 +16,12 @@ const weekWeather =　[...location.consolidated_weather].splice(
 </script>
 
 <template>
-  <h1>Week</h1>
   <ul class="week">
     <WeatherCard
-      v-for="weather in weekWeather"
+      v-for="(weather, index) in weekWeather"
       :key="weather.id"
       :weather="weather"
+      :index="index"
     />
   </ul>
 </template>
