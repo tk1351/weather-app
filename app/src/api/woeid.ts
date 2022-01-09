@@ -1,0 +1,1 @@
+export const TOKYO_WOEID = 1118370

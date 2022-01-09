@@ -1,5 +1,5 @@
 <script lang="ts" setup></script>
 
 <template>
-  <h1>Week</h1>
+  <p>Search</p>
 </template>
