@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import WeatherButton from "../atoms/WeatherButton.vue";
-import WeatherMyLocationIcon from "../atoms/WeatherMyLocationIcon.vue";
+import WeatherIconButton from "../atoms/WeatherIconButton.vue";
 </script>
 
 <template>
   <div class="search-wrapper">
     <WeatherButton :value="'Search for places'" :type="'button'" />
-    <WeatherMyLocationIcon />
+    <WeatherIconButton :value="'my_location'" :material="true" />
   </div>
 </template>
 

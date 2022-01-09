@@ -1,7 +1,16 @@
+<script lang="ts" setup>
+interface Props {
+  material: boolean
+  value: string
+}
+
+const { material, value } = defineProps<Props>()
+</script>
+
 <template>
   <button class="my-location">
-    <span class="material-icons-outlined">
-      my_location
+    <span :class="{'material-icons-outlined': material}">
+      {{ value }}
     </span>
   </button>
 </template>
