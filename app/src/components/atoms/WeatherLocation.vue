@@ -7,5 +7,11 @@ const { location } = defineProps<Props>()
 </script>
 
 <template>
-  <p>{{ location }}</p>
+  <p class="location">{{ location }}</p>
 </template>
+
+<style scoped>
+.location {
+  color: #88869D;
+}
+</style>

@@ -7,5 +7,12 @@ const { date } = defineProps<Props>()
 </script>
 
 <template>
-  <p>today - {{ date }}</p>
+  <p class="date">today ・ {{ date }}</p>
 </template>
+
+<style scoped>
+.date {
+  color: #88869D;
+  margin-bottom: 20px;
+}
+</style>

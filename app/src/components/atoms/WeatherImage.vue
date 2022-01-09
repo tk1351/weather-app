@@ -17,7 +17,8 @@ const src = createWeatherStateIcon(abbreviation)
 
 <style scoped>
 .weather-state {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  margin: 70px 0;
 }
 </style>

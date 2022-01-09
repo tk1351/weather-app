@@ -5,9 +5,8 @@ import WeatherImage from "../atoms/WeatherImage.vue";
 import WeatherTemp from "../atoms/WeatherTemp.vue";
 import WeatherState from "../atoms/WeatherState.vue";
 import WeatherDate from "../atoms/WeatherDate.vue";
+import WeatherMyLocation from "../molecules/WeatherMyLocation.vue";
 import { Location } from "../../types/types";
-import WeatherLocationIcon from "../atoms/WeatherLocationIcon.vue";
-import WeatherLocation from "../atoms/WeatherLocation.vue";
 import { createOrderedDate } from "../../lib";
 
 interface Props {
@@ -32,10 +31,19 @@ const orderedDate = computed(() => {
 
 <template>
   <WeatherSearch />
-  <WeatherImage :abbreviation="weather_state_abbr" />
-  <WeatherTemp :temp="orderedTemp" />
-  <WeatherState :state="weather_state_name" />
-  <WeatherDate :date="orderedDate" />
-  <WeatherLocationIcon />
-  <WeatherLocation :location="location.title" />
+  <div class="today">
+    <WeatherImage :abbreviation="weather_state_abbr" />
+    <WeatherTemp :temp="orderedTemp" />
+    <WeatherState :state="weather_state_name" />
+    <WeatherDate :date="orderedDate" />
+    <WeatherMyLocation :location="location.title" />
+  </div>
 </template>
+
+<style scoped>
+.today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

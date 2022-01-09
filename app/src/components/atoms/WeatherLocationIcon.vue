@@ -3,3 +3,9 @@
     location_on
   </span>
 </template>
+
+<style scoped>
+.material-icons-outlined {
+  color: #88869D;
+}
+</style>

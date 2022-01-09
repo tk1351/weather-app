@@ -7,5 +7,18 @@ const { temp } = defineProps<Props>()
 </script>
 
 <template>
-  <p>{{ temp }}℃</p>
+  <p class="temp">
+    <span class="temp__number">{{ temp }}</span>
+    ℃
+  </p>
 </template>
+
+<style scoped>
+.temp {
+  font-size: 25px;
+}
+
+.temp__number {
+  font-size: 70px;
+}
+</style>

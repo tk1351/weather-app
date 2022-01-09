@@ -7,5 +7,13 @@ const { state } = defineProps<Props>()
 </script>
 
 <template>
-  <p>{{ state }}</p>
+  <p class="state">{{ state }}</p>
 </template>
+
+<style scoped>
+.state {
+  color: #A09FB1;
+  font-size: 23px;
+  margin: 40px 0;
+}
+</style>
