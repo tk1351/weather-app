@@ -16,14 +16,24 @@ const { location } = defineProps<Props>()
     <WeatherSwitchTemp />
     <WeatherWeek :location="location" />
     <WeatherHighlights :location="location" />
+    <span class="footer">created by username - devChallenges.io</span>
   </div>
 </template>
 
 <style scoped>
 .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100%;
   width: 75%;
   background-color: #100E1D;
   padding: 20px 170px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #A09FB1;
 }
 </style>
