@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import WeatherWeek from "../organisms/WeatherWeek.vue";
-import WeatherHighlights from "../organisms/WeatherHilights.vue";
+import WeatherHighlights from "../organisms/WeatherHighlights.vue";
 import WeatherSwitchTemp from "../molecules/WeatherSwitchTemp.vue";
 import {Location} from "../../types/types";
 
@@ -15,7 +15,7 @@ const { location } = defineProps<Props>()
   <div class="detail">
     <WeatherSwitchTemp />
     <WeatherWeek :location="location" />
-    <WeatherHighlights />
+    <WeatherHighlights :location="location" />
   </div>
 </template>
 
