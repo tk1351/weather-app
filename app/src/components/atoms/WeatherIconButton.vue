@@ -4,12 +4,21 @@ interface Props {
   value: string
 }
 
+interface Emits {
+  (event: 'click'): void
+}
+
 const { material, value } = defineProps<Props>()
+const emit = defineEmits<Emits>()
+
+const handleClick = () => {
+  emit('click')
+}
 
 </script>
 
 <template>
-  <button class="button">
+  <button type="button" class="button" @click="handleClick">
     <span
       :class="{'material-icons-outlined': material }"
     >

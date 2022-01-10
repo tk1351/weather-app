@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import {defineProps, reactive} from "vue";
 import WeatherToday from "../organisms/WeatherToday.vue";
+import WeatherLocationSearch from "../organisms/WeatherLocationSearch.vue";
 import { Location } from "../../types/types";
 
 interface Props {
@@ -8,11 +9,20 @@ interface Props {
 }
 
 const { location } = defineProps<Props>()
+
+const state = reactive({
+  search: false
+})
+
+const changeComponent = () => {
+  state.search = !state.search
+}
 </script>
 
 <template>
   <div class="nav">
-    <WeatherToday :location="location" />
+    <WeatherToday v-if="!state.search" :location="location" @click="changeComponent" />
+    <WeatherLocationSearch v-if="state.search" @click="changeComponent" />
   </div>
 </template>
 

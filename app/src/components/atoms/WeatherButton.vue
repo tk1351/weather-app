@@ -4,12 +4,21 @@ interface Props {
   type: 'button' | 'submit'
 }
 
+interface Emits {
+  (event: 'click'): void
+}
+
 const { value, type } = defineProps<Props>()
+const emit = defineEmits<Emits>()
+
+const handleClick = () => {
+  emit('click')
+}
 
 </script>
 
 <template>
-  <button :type="type" class="button">
+  <button :type="type" class="button" @click="handleClick">
     {{ value }}
   </button>
 </template>
@@ -21,18 +30,4 @@ const { value, type } = defineProps<Props>()
   color: #E7E7EB;
   cursor: pointer;
 }
-
-/*.button--temp {*/
-/*  height: 25px;*/
-/*  width: 25px;*/
-/*  border: 0;*/
-/*  border-radius: 50%;*/
-/*  background-color: #6F707A;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.button--checked {*/
-/*  background-color: #E7E7EB;*/
-/*  color: #100E1D;*/
-/*}*/
 </style>

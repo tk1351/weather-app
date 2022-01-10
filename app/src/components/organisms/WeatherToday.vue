@@ -13,7 +13,12 @@ interface Props {
   location: Location
 }
 
+interface Emits {
+  (event: 'click'): void
+}
+
 const { location } = defineProps<Props>()
+const emit = defineEmits<Emits>()
 
 const todayWeather = location.consolidated_weather[0]
 const {
@@ -27,10 +32,14 @@ const orderedTemp = computed(() => Math.ceil(the_temp))
 const orderedDate = computed(() => {
   return createOrderedDate(applicable_date, 'today')
 })
+
+const handleEvent = () => {
+  emit('click')
+}
 </script>
 
 <template>
-  <WeatherSearch />
+  <WeatherSearch @click="handleEvent" />
   <div class="today">
     <WeatherImage :abbreviation="weather_state_abbr" :today="true" />
     <WeatherTemp :temp="orderedTemp" :today="true" />
