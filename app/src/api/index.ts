@@ -1,4 +1,4 @@
-import {Location} from "../types/types";
+import {Location, LocationSearch} from "../types/types";
 import axios from "axios";
 import {TOKYO_WOEID} from "./woeid";
 
@@ -10,6 +10,13 @@ export const createWeatherStateIcon = (abbreviation: string): string => {
 
 export const fetchWeather = async (): Promise<Location> => {
     const { data } = await axios.get<Location>(`/api/location/${TOKYO_WOEID}/`)
+    return data
+}
+
+export const searchLocation = async (query: string): Promise<LocationSearch[]> => {
+    const { data } = await axios.get<LocationSearch[]>(
+        `/api/location/search/?query=${query}`
+    )
     return data
 }
 
@@ -48,3 +55,5 @@ export const defaultLocation: Location = {
         url: '',
     }]
 }
+
+export const defaultSearchResults: LocationSearch[] = []

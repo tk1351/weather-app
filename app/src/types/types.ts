@@ -35,3 +35,11 @@ export interface ConsolidatedWeather {
     visibility: number
     predictability: number
 }
+
+export interface LocationSearch {
+    title: string
+    location_type: string
+    latt_long: number
+    woeid: number
+    distance:number
+}
